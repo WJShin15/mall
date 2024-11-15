@@ -33,25 +33,29 @@ public class Delivery {
     }
 
     public static DeliveryRepository repository() {
+        /* 
         DeliveryRepository deliveryRepository = DeliveryApplication.applicationContext.getBean(
             DeliveryRepository.class
         );
+        */
         return deliveryRepository;
     }
 
     //<<< Clean Arch / Port Method
-    public static void startDelivery(OrderPlaced orderPlaced) {
+    public static void startDelivery(OrderPlaced orderPlaced) {//로직을 여기서 구현함
         //implement business logic here:
 
-        /** Example 1:  new item 
+        // Example 1:  new item 신규로 넣거나
         Delivery delivery = new Delivery();
         repository().save(delivery);
+        delivery.setProductId(orderPlaced.getProductId());
+        delivery.setUserId(orderPlaced.getUserId());
+        //등등 추가
 
         DeliveryStarted deliveryStarted = new DeliveryStarted(delivery);
         deliveryStarted.publishAfterCommit();
-        */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process 찾거나
         
         repository().findById(orderPlaced.get???()).ifPresent(delivery->{
             

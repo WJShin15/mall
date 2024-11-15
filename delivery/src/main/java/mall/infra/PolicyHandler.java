@@ -27,16 +27,10 @@ public class PolicyHandler {
         value = KafkaProcessor.INPUT,
         condition = "headers['type']=='OrderPlaced'"
     )
-    public void wheneverOrderPlaced_StartDelivery(
-        @Payload OrderPlaced orderPlaced
-    ) {
+    public void wheneverOrderPlaced_StartDelivery(//배송팀에서 잡아와서 model driven 한 이름으로 넣음
+        @Payload OrderPlaced orderPlaced) {
         OrderPlaced event = orderPlaced;
-        System.out.println(
-            "\n\n##### listener StartDelivery : " + orderPlaced + "\n\n"
-        );
-
-        // Sample Logic //
-        Delivery.startDelivery(event);
+        Delivery.startDelivery(event);//로직을 startDelievery에서 여기서 구현함
     }
 }
 //>>> Clean Arch / Inbound Adaptor
