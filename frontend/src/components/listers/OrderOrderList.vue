@@ -45,6 +45,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -53,6 +54,7 @@
                             [ ProductId :  {{data.productId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Qty :  {{data.qty }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ OrderDt :  {{data.orderDt }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -124,6 +126,7 @@
                 'productId': '',
                 'qty': 0,
                 'status': '',
+                'orderDt': '2024-11-15',
             }
         },
         methods: {
